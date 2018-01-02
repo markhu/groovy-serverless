@@ -13,9 +13,12 @@ class Handler implements RequestHandler<Map<String, Object>, ApiGatewayResponse>
   @Override
   ApiGatewayResponse handleRequest(Map<String, Object> input, Context context) {
     LOG.info("received: " + input)
+
+    def aMsg = input.queryStringParameters ? input.queryStringParameters["alt"] : "no alt";
+
     Response responseBody = Response.builder()
         .message('Using Serverless v1.x! Your GROOVY function executed successfully!')
-        .altMess('hi oddball')
+        .altMess(aMsg)
         .input(input)
         .build()
         
