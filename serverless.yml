@@ -58,8 +58,7 @@ functions:
 #    Check the event documentation for details
     events:
       - http:
-#          path: users/create
-          path: /
+          path: hello
           method: get
           cors: true
 #      - s3: ${env:BUCKET}
