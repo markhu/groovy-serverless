@@ -14,7 +14,7 @@ class Handler implements RequestHandler<Map<String, Object>, ApiGatewayResponse>
   ApiGatewayResponse handleRequest(Map<String, Object> input, Context context) {
     LOG.info("received: " + input)
     Response responseBody = Response.builder()
-        .message('Go Serverless v1.x! Your GROOVY function executed successfully!')
+        .message('Using Serverless v1.x! Your GROOVY function executed successfully!')
         .altMess('hi oddball')
         .input(input)
         .build()

@@ -4,11 +4,11 @@
 The `serverless` npm from serverless.com
 AWS config in ~/.aws/
 
-# initial creation
+## initial creation
 
     serverless create --template aws-groovy-gradle
 
-# mods
+## mods
 
     edited the serverless.yml file to create a GET callable URL
 
@@ -16,4 +16,12 @@ AWS config in ~/.aws/
 
     gradle build
     serverless deploy
+
+## faster updates later
+
+    serverless deploy function --function hello
+
+## tested at
+
+https://p89vtcmaej.execute-api.us-west-2.amazonaws.com/dev/?k=vvvv
 
