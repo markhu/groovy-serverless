@@ -19,7 +19,7 @@ AWS config in ~/.aws/
 
 ## faster updates later
 
-    serverless deploy function --function hello
+    serverless deploy function --function hello  # scripted in ./depl.sh
 
 ## tested at
 
