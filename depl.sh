@@ -16,6 +16,6 @@ test -f build/distributions/*.zip || gradle build
 
 ## tested at
 
-curl -s "https://p89vtcmaej.execute-api.us-west-2.amazonaws.com/dev/?alt=altMessage++here" | jq '{altMess,message}'
+# curl -s "https://p89vtcmaej.execute-api.us-west-2.amazonaws.com/dev/?alt=altMessage++here" | jq '{altMess,message}'
 curl -s "https://bf9pgyhdcc.execute-api.us-west-2.amazonaws.com/dev/hello?alt=hihihi+YOYO" | jq '{altMess,message}'
 

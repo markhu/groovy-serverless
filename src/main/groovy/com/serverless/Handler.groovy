@@ -5,6 +5,9 @@ import com.amazonaws.services.lambda.runtime.RequestHandler
 import groovy.transform.CompileStatic
 import org.apache.log4j.Logger
 
+import groovy.json.JsonOutput
+import groovy.transform.builder.Builder
+
 @CompileStatic
 class Handler implements RequestHandler<Map<String, Object>, ApiGatewayResponse> {
 
@@ -17,7 +20,7 @@ class Handler implements RequestHandler<Map<String, Object>, ApiGatewayResponse>
     def aMsg = input.queryStringParameters ? input.queryStringParameters["alt"] : "no alt";
 
     Response responseBody = Response.builder()
-        .message('Using Serverless v1.x! Your GROOVY function executed successfully!')
+        .message('Using Serverless v1.x! Your GROOVY function executed with success!')
         .altMess(aMsg)
         .input(input)
         .build()
@@ -29,3 +32,16 @@ class Handler implements RequestHandler<Map<String, Object>, ApiGatewayResponse>
         .build()
   }
 }
+
+@Builder
+@CompileStatic
+class Response {
+  Object message  // structure for the JSON output
+  Object altMess
+  Map<String, Object> input
+
+  String toJson() {
+    return JsonOutput.prettyPrint(JsonOutput.toJson(this))
+  }
+}
+
